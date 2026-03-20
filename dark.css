@@ -1,0 +1,96 @@
+html[data-theme="dark"]{
+  --bg:#0B0D10;
+  --paper:#121212;
+  --ink:#FFFFFF;
+  --muted:#E0E0E0;
+  --border:#2A2F3A;
+  --accent:#5AD18B;
+  --accent-2:#2E8B57;
+  --focus: rgba(255,255,255,0.28);
+  --shadow: 0 18px 60px rgba(0,0,0,0.55);
+
+  --h1-color: #FFFFFF;
+  --h2-color: #FFFFFF;
+  --h3-color: #E0E0E0;
+  --h4-color: #E0E0E0;
+  --h5-color: #E0E0E0;
+  --h6-color: #E0E0E0;
+}
+
+@media (prefers-color-scheme: dark){
+  html:not([data-theme="light"]){
+    --bg:#0B0D10;
+    --paper:#121212;
+    --ink:#FFFFFF;
+    --muted:#E0E0E0;
+    --border:#2A2F3A;
+    --accent:#5AD18B;
+    --accent-2:#2E8B57;
+    --focus: rgba(255,255,255,0.28);
+    --shadow: 0 18px 60px rgba(0,0,0,0.55);
+
+    --h1-color: #FFFFFF;
+    --h2-color: #FFFFFF;
+    --h3-color: #E0E0E0;
+    --h4-color: #E0E0E0;
+    --h5-color: #E0E0E0;
+    --h6-color: #E0E0E0;
+  }
+}
+
+html[data-theme="dark"] .topbar{
+  background: var(--paper);
+}
+
+html[data-theme="dark"] .directory-btn{
+  color:#E0E0E0;
+  opacity:1;
+}
+
+html[data-theme="dark"] .directory-btn[aria-current="page"],
+html[data-theme="dark"] .directory-btn[aria-selected="true"]{
+  color:#FFFFFF;
+  opacity:1;
+}
+
+html[data-theme="dark"] .btn,
+html[data-theme="dark"] .search,
+html[data-theme="dark"] .subnavBar{
+  background: var(--paper);
+}
+
+html[data-theme="dark"] .subnavTab{
+  color: #E0E0E0;
+}
+
+html[data-theme="dark"] .subnavTab[aria-current="true"]{
+  color: #FFFFFF;
+}
+
+@media (prefers-color-scheme: dark){
+  html:not([data-theme="light"]) .topbar{
+    background: var(--paper);
+  }
+  html:not([data-theme="light"]) .directory-btn{
+    color:#E0E0E0;
+    opacity:1;
+  }
+  html:not([data-theme="light"]) .directory-btn[aria-current="page"],
+  html:not([data-theme="light"]) .directory-btn[aria-selected="true"]{
+    color:#FFFFFF;
+    opacity:1;
+  }
+  html:not([data-theme="light"]) .btn,
+  html:not([data-theme="light"]) .search,
+  html:not([data-theme="light"]) .subnavBar{
+    background: var(--paper);
+  }
+
+  html:not([data-theme="light"]) .subnavTab{
+    color: #E0E0E0;
+  }
+
+  html:not([data-theme="light"]) .subnavTab[aria-current="true"]{
+    color: #FFFFFF;
+  }
+}

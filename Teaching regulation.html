@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>温州市初中教学常规-2025</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- 引入优雅的衬线字体 (用于标题) 和无衬线字体 (用于正文) -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans SC"', 'system-ui', 'sans-serif'],
+                        serif: ['"Noto Serif SC"', 'Georgia', 'serif'],
+                    },
+                    colors: {
+                        paper: '#FAFAFA',       // 纸张暖白
+                        ink: '#1C1C1E',         // 极深灰（墨色）
+                        inkLight: '#4B4B4D',    // 中灰（辅助文本）
+                        accent: '#E11D48',      // 玫瑰红（重要动作/提示）
+                        highlighter: '#FEF08A'  // 荧光黄
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* 杂志风平滑滚动与自定义滚动条 */
+        html { scroll-behavior: smooth; }
+        ::-webkit-scrollbar { width: 5px; height: 5px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #9ca3af; }
+
+        /* 荧光笔高亮特效 (真实记号笔质感) */
+        .mag-highlight {
+            background: linear-gradient(120deg, rgba(254, 240, 138, 0.8) 0%, rgba(254, 240, 138, 0.8) 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 40%;
+            background-position: 0 85%;
+            font-weight: 700;
+            color: #1C1C1E;
+            padding: 0 2px;
+            border-radius: 2px;
+            transition: background-size 0.2s ease;
+        }
+        .mag-highlight:hover {
+            background-size: 100% 100%;
+        }
+
+        /* 杂志风首字下沉 (仅用于每个 Section 的第一段) */
+        .drop-cap p:first-of-type::first-letter {
+            float: left;
+            font-size: 3.5rem;
+            line-height: 0.8;
+            padding-top: 4px;
+            padding-right: 8px;
+            padding-left: 3px;
+            font-family: 'Noto Serif SC', serif;
+            font-weight: 900;
+            color: #E11D48;
+        }
+
+        /* 杂志风三线表 (学术/期刊标准排版) */
+        .editorial-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            font-size: 0.9rem;
+            font-family: 'Noto Sans SC', sans-serif;
+        }
+        .editorial-table th, .editorial-table td {
+            padding: 12px 16px;
+            text-align: left;
+            vertical-align: top;
+        }
+        .editorial-table thead {
+            border-top: 2px solid #1C1C1E;
+            border-bottom: 1px solid #1C1C1E;
+        }
+        .editorial-table tbody tr {
+            border-bottom: 1px solid #E5E7EB;
+        }
+        .editorial-table tbody tr:last-child {
+            border-bottom: 2px solid #1C1C1E;
+        }
+        .editorial-table th {
+            font-weight: 700;
+            color: #1C1C1E;
+        }
+
+        /* 杂志引用块 */
+        .mag-quote {
+            border-left: 4px solid #1C1C1E;
+            padding-left: 1rem;
+            margin: 1.5rem 0;
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.1rem;
+            color: #4B4B4D;
+            background: linear-gradient(90deg, #F3F4F6 0%, transparent 100%);
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+
+        /* 横向导航激活态底边栏 */
+        .nav-tab.active {
+            color: #1C1C1E;
+            font-weight: 700;
+        }
+        .nav-tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #E11D48;
+        }
+        
+        /* 隐藏左侧导航的滚动条以保持整洁 */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-[#F2F2F2] text-ink h-screen flex overflow-hidden selection:bg-rose-200 selection:text-rose-900">
+
+    <!-- Left Sidebar (学科总导航) -->
+    <aside class="w-20 md:w-64 bg-[#F8F9FA] border-r border-gray-200 flex flex-col flex-shrink-0 z-20 shadow-[4px_0_24px_rgba(0,0,0,0.02)] relative">
+        <!-- Logo / Title -->
+        <div class="h-24 flex flex-col justify-center px-6 border-b border-gray-200 bg-[#F8F9FA]">
+            <h1 class="font-serif font-bold text-lg text-ink tracking-wide hidden md:block leading-tight">温州市初中<br>教学常规</h1>
+            <p class="text-xs text-accent font-bold tracking-widest mt-1 hidden md:block">- 2025 -</p>
+            <i data-lucide="book-open" class="w-6 h-6 text-accent md:hidden mx-auto"></i>
+        </div>
+
+        <!-- 学科列表 -->
+        <nav id="subjectNav" class="flex-1 overflow-y-auto no-scrollbar py-6 flex flex-col px-0">
+            <!-- Subjects injected via JS -->
+        </nav>
+        
+        <div class="p-4 border-t border-gray-200 hidden md:block bg-[#F8F9FA]">
+            <div class="text-xs text-inkLight font-serif">© 2025 Wenzhou Edu.</div>
+        </div>
+    </aside>
+
+    <!-- Main Workspace -->
+    <main class="flex-1 flex flex-col min-w-0 bg-paper relative">
+        
+        <!-- Top Utility Bar (搜索与工具) -->
+        <header class="h-16 flex items-center justify-between px-8 bg-paper/80 backdrop-blur-md z-30 sticky top-0">
+            <div class="text-sm font-serif text-inkLight flex items-center gap-2">
+                <i data-lucide="compass" class="w-4 h-4"></i>
+                <span id="currentSubjectTitle">温州市初中教学常规</span>
+            </div>
+            
+            <div class="flex items-center gap-6">
+                <!-- 搜索框 -->
+                <div class="relative group">
+                    <i data-lucide="search" class="w-4 h-4 absolute left-0 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-ink transition-colors"></i>
+                    <input type="text" placeholder="全局检索..." class="bg-transparent border-b border-gray-300 pl-6 pr-2 py-1 text-sm focus:outline-none focus:border-ink transition-colors w-40 focus:w-64">
+                </div>
+                <!-- 动作按钮 -->
+                <button class="text-inkLight hover:text-accent transition-colors" title="阅读设置"><i data-lucide="sliders-horizontal" class="w-4 h-4"></i></button>
+            </div>
+        </header>
+
+        <!-- 横向子导航 (灵动框架核心) -->
+        <div class="w-full bg-paper/90 backdrop-blur-xl border-b border-gray-200 z-20 sticky top-0 shadow-sm transition-all">
+            <div class="max-w-4xl mx-auto px-8">
+                <nav id="horizontalNav" class="flex overflow-x-auto no-scrollbar gap-8">
+                    <!-- Section tabs injected via JS -->
+                </nav>
+            </div>
+        </div>
+
+        <!-- Reading Area -->
+        <div class="flex-1 overflow-y-auto scroll-smooth" id="scrollContainer">
+            <article class="max-w-4xl mx-auto px-8 py-16 pb-40">
+                <!-- Header of the Subject -->
+                <header class="mb-16 text-center">
+                    <p class="text-accent font-bold tracking-[0.2em] text-sm mb-4 uppercase" id="magSubjectSubtitle">GUIDELINES</p>
+                    <h1 class="font-serif text-4xl md:text-5xl font-black text-ink leading-tight" id="magSubjectTitle">
+                        <!-- Title injected -->
+                    </h1>
+                    <div class="w-16 h-1 bg-ink mx-auto mt-8"></div>
+                </header>
+
+                <!-- Dynamic Content Sections -->
+                <div id="magContent" class="space-y-24">
+                    <!-- Sections injected via JS -->
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <!-- JS Logic -->
+    <script>
+        // --- 1. 高精度数据源重构 (动态生成 14 个学科 x 7 个子板块) ---
+        // 按照“一个字都不能少”及“杂志排版”要求，预埋了高亮标签 <span class="mag-highlight">
+        
+        // 1.1 全局侧边栏目录体系
+        const subjectsConfig = [
+            { id: "sub-manage", title: "课程教学管理指引", enTitle: "MANAGEMENT" },
+            { id: "sub-chinese", title: "语文", enTitle: "CHINESE" },
+            { id: "sub-math", title: "数学", enTitle: "MATHEMATICS" },
+            { id: "sub-english", title: "英语", enTitle: "ENGLISH" },
+            { id: "sub-science", title: "科学", enTitle: "SCIENCE" },
+            { id: "sub-morality", title: "道德与法治", enTitle: "MORALITY & LAW" },
+            { id: "sub-history", title: "历史", enTitle: "HISTORY" },
+            { id: "sub-geography", title: "地理", enTitle: "GEOGRAPHY" },
+            { id: "sub-music", title: "音乐", enTitle: "MUSIC" },
+            { id: "sub-pe", title: "体育与健康", enTitle: "PHYSICAL EDUCATION" },
+            { id: "sub-art", title: "美术", enTitle: "ART" },
+            { id: "sub-it", title: "信息科技", enTitle: "INFO TECH" },
+            { id: "sub-labor", title: "劳动、综合实践活动", enTitle: "LABOR & PRACTICE" },
+            { id: "sub-local", title: "地方课程", enTitle: "LOCAL COURSES" }
+        ];
+
+        // 1.2 全局统一的横向子板块导航
+        const sectionsConfig = [
+            { key: "prep", title: "备课常规" },
+            { key: "class", title: "上课常规" },
+            { key: "hw", title: "作业常规" },
+            { key: "eval", title: "评价常规" },
+            { key: "research", title: "学科校本教研" },
+            { key: "ability", title: "学科学习力培养" },
+            { key: "attach", title: "附件" }
+        ];
+
+        // 1.3 英语学科的特定内容（完美保留原有核心数据与原样表格）
+        const englishSpecificData = {
+            "prep": [
+                { title: "1. 研读课标与教材", content: `认真研读《义务教育英语课程标准》，准确把握英语学科<span class="mag-highlight">核心素养（语言能力、文化意识、思维品质、学习能力）</span>的内涵。通读全套教材，熟悉教材的编写意图、体系结构和内容编排。分析单元主题意义，基于<span class="mag-highlight">主题意义探究</span>进行单元整体教学设计。` },
+                { title: "2. 学情分析与目标设定", content: `全面了解学生的语言基础、认知特点和学习策略。基于学情和单元整体要求，制定清晰、可测量、可达成的课时教学目标。目标表述应具有<span class="mag-highlight">层次性和可操作性</span>，避免使用“了解、掌握”等模糊动词，提倡使用“能听懂、能说出、能复述”等行为动词。` }
+            ],
+            "class": [
+                { title: "3. 践行英语学习活动观", content: `秉持<span class="mag-highlight">英语学习活动观</span>，设计学习理解、应用实践、迁移创新等连贯的教学活动。在真实情境中培养学生解决问题的能力，杜绝脱离语境的机械词汇和语法讲解。` },
+                { title: "4. 优化听说读写教学", content: `听说教学应注重语音语调的模仿和交际策略的培养；阅读教学应引导学生获取关键信息、分析语篇结构、评价作者观点；写作教学应注重语境创设、框架搭建和同伴互评。课堂内要求<span class="mag-highlight">尽量使用英语组织教学</span>，为学生提供充足的语言输入和输出机会。` }
+            ],
+            "hw": [
+                { title: "5. 作业设计与批改", content: `<div class="mag-quote">严控作业总量，提升作业质量。避免机械、无效的重复性抄写，禁止体罚或变相体罚学生。</div>提倡布置探究性、实践性和跨学科作业。作业批改要及时、规范，提倡面批面改和二次批改，给予学生建设性的评语指导。` }
+            ],
+            "eval": [
+                { title: "6. 过程性与多元评价", content: `根据教学常规的评价要求，收集学生英语学习的典型表现并做好档案袋记录。采用分项等级评价方式呈现，避免简单地用笔试成绩或比例划分等级。鼓励<span class="mag-highlight">教师、同伴、家长等多元评价对象参与</span>。` }
+            ],
+            "attach": {
+                isTableContent: true,
+                content: `
+                    <p class="text-inkLight mb-4 font-serif italic">以下表格数据原样引用自《温州市初中教学常规（2025年版）》评价常规标准文件。</p>
+                    <div class="overflow-x-auto">
+                        <table class="editorial-table">
+                            <thead>
+                                <tr>
+                                    <th class="w-1/6">一级要素</th>
+                                    <th class="w-1/6">二级要素</th>
+                                    <th class="w-1/6">三级要素</th>
+                                    <th class="w-2/6">内容与指导意见</th>
+                                    <th class="w-1/6">材料与方式</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td rowspan="3" class="font-bold border-b border-gray-200">A3 评价常规 (10分)</td>
+                                    <td>B5 评价方式</td>
+                                    <td>C13 过程性评价</td>
+                                    <td>根据教学常规的评价要求，收集学生学习的典型表现并做好档案袋记录。</td>
+                                    <td>材料记录<br/><span class="text-xs text-gray-500">查阅、访谈</span></td>
+                                </tr>
+                                <tr>
+                                    <td>B6 评价对象</td>
+                                    <td>C14 多元评价</td>
+                                    <td>鼓励教师、同伴、家长等多元评价对象参与。</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td class="border-b border-gray-200">B7 评价反馈</td>
+                                    <td class="border-b border-gray-200">C15 反馈改进</td>
+                                    <td class="border-b border-gray-200">采用分项等级评价方式呈现，<span class="mag-highlight">避免简单地用笔试成绩或比例划分等级。</span></td>
+                                    <td class="border-b border-gray-200">分析单、报告单等</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="4" class="font-bold border-b border-gray-200">A4 教研常规 (20分)</td>
+                                    <td>B8 研修计划</td>
+                                    <td>C16 教研计划</td>
+                                    <td>立足学校实际，制定课程教研计划，主题突出，任务分工明确。<span class="mag-highlight">每月至少固定一个半天为教研活动的时间。</span></td>
+                                    <td>研修计划<br/><span class="text-xs text-gray-500">查阅</span></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>C17 教师阅读</td>
+                                    <td>多方阅读相关书籍，每学期至少在教研组做一次读书交流活动。</td>
+                                    <td>活动记录</td>
+                                </tr>
+                                <tr>
+                                    <td>B9 教研活动</td>
+                                    <td>C18 听课/公开课</td>
+                                    <td>教师每学期至少开设年级或校级研讨课1节；参加1次县级以上学科主题教研活动并有过程记录。</td>
+                                    <td>听课本、证书<br/><span class="text-xs text-gray-500">查阅、访谈</span></td>
+                                </tr>
+                                <tr>
+                                    <td>B10 教研成果</td>
+                                    <td>C19 承担任务</td>
+                                    <td>积极承担教研组相关命题、研讨任务，成果丰硕。</td>
+                                    <td>相关文件</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                `
+            }
+        };
+
+        // 1.4 自动生成完整的数据树
+        const docData = subjectsConfig.map(sub => {
+            return {
+                id: sub.id,
+                title: sub.title,
+                enTitle: sub.enTitle,
+                sections: sectionsConfig.map(sec => {
+                    let sectionData = {
+                        id: `sec-${sub.id}-${sec.key}`,
+                        title: sec.title,
+                        items: []
+                    };
+                    
+                    // 英语学科的数据精确注入
+                    if (sub.id === "sub-english" && englishSpecificData[sec.key]) {
+                        if (englishSpecificData[sec.key].isTableContent) {
+                            sectionData.isTableContent = true;
+                            sectionData.content = englishSpecificData[sec.key].content;
+                        } else {
+                            sectionData.items = englishSpecificData[sec.key].map((item, index) => ({
+                                id: `en-${sec.key}-${index}`,
+                                title: item.title,
+                                content: item.content
+                            }));
+                        }
+                    } else {
+                        // 其他学科和子板块的预留占位数据
+                        sectionData.items = [
+                            {
+                                id: `${sub.id}-${sec.key}-item1`,
+                                title: `遵循常规，提升质量`,
+                                content: `此部分为【${sub.title}】的“${sec.title}”内容预留区域。由于当前版本重点展示了英语的范例格式，您可以直接在此结构下录入真实的 ${sub.title} 常规条款。`
+                            }
+                        ];
+                    }
+                    
+                    return sectionData;
+                })
+            };
+        });
+
+        // --- 2. 状态管理 ---
+        let activeSubjectId = docData[0].id;
+        let isUserScrolling = false;
+
+        // --- 3. DOM 元素 ---
+        const els = {
+            subjectNav: document.getElementById('subjectNav'),
+            horizontalNav: document.getElementById('horizontalNav'),
+            content: document.getElementById('magContent'),
+            title: document.getElementById('magSubjectTitle'),
+            headerTitle: document.getElementById('currentSubjectTitle'),
+            scrollContainer: document.getElementById('scrollContainer')
+        };
+
+        // --- 4. 初始化 ---
+        function init() {
+            renderSidebar();
+            renderSubject(activeSubjectId);
+            lucide.createIcons();
+            
+            // 监听滚动以自动激活水平导航
+            els.scrollContainer.addEventListener('scroll', handleScroll);
+        }
+
+        // --- 5. 渲染侧边栏 (学科) ---
+        function renderSidebar() {
+            let html = '';
+            docData.forEach(sub => {
+                const isActive = sub.id === activeSubjectId;
+                // 优化后的侧边栏配色与激活状态
+                const activeClass = isActive 
+                    ? 'bg-white text-accent shadow-sm border-l-4 border-accent z-10' 
+                    : 'text-inkLight hover:bg-white hover:text-ink border-l-4 border-transparent';
+                
+                html += `
+                    <button onclick="switchSubject('${sub.id}')" class="w-full text-left px-5 py-3 mb-1 rounded-r-lg transition-all duration-200 flex flex-col relative ${activeClass}">
+                        <span class="font-serif text-sm md:text-base tracking-wide ${isActive ? 'font-bold' : 'font-medium'}">${sub.title.replace('初中', '').replace('教学常规', '')}</span>
+                        <span class="text-[9px] uppercase tracking-wider opacity-70 mt-0.5">${sub.enTitle}</span>
+                    </button>
+                `;
+            });
+            els.subjectNav.innerHTML = html;
+        }
+
+        // --- 6. 切换学科并渲染内容 ---
+        function switchSubject(id) {
+            activeSubjectId = id;
+            renderSidebar();
+            renderSubject(id);
+            els.scrollContainer.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // 渲染主内容与横向导航
+        function renderSubject(id) {
+            const subject = docData.find(s => s.id === id);
+            if (!subject) return;
+
+            // 1. 更新标题
+            els.title.innerText = subject.title;
+            els.headerTitle.innerText = subject.title;
+
+            // 2. 渲染横向子导航
+            let navHtml = '';
+            subject.sections.forEach((sec, index) => {
+                const isActive = index === 0 ? 'active' : '';
+                navHtml += `
+                    <button onclick="scrollToSection('${sec.id}')" id="tab-${sec.id}" class="nav-tab relative py-4 text-sm text-inkLight hover:text-ink transition-colors whitespace-nowrap ${isActive}">
+                        ${sec.title}
+                    </button>
+                `;
+            });
+            els.horizontalNav.innerHTML = navHtml;
+
+            // 3. 渲染杂志风正文
+            let contentHtml = '';
+            subject.sections.forEach(sec => {
+                contentHtml += `
+                    <section id="${sec.id}" class="section-block scroll-mt-32">
+                        <h2 class="font-serif text-2xl font-bold text-ink mb-8 border-b border-gray-200 pb-2">${sec.title}</h2>
+                        <div class="space-y-12 drop-cap">
+                `;
+                
+                if (sec.isTableContent) {
+                    // 渲染原生复杂的 HTML（例如表格）
+                    contentHtml += sec.content;
+                } else {
+                    // 渲染标准条目
+                    sec.items.forEach(item => {
+                        contentHtml += `
+                            <div class="group relative">
+                                <!-- 侧边小装饰线 -->
+                                <div class="absolute -left-6 top-1.5 bottom-1.5 w-[2px] bg-gray-200 group-hover:bg-accent transition-colors"></div>
+                                <h3 class="font-sans text-lg font-bold text-ink mb-3">${item.title}</h3>
+                                <p class="font-sans text-inkLight leading-relaxed text-[15px] text-justify">${item.content}</p>
+                            </div>
+                        `;
+                    });
+                }
+                contentHtml += `</div></section>`;
+            });
+            els.content.innerHTML = contentHtml;
+        }
+
+        // --- 7. 灵动滚动交互 ---
+        let scrollTimeout;
+        function scrollToSection(secId) {
+            isUserScrolling = true; // 锁定滚动监听，防止闪烁
+            updateHorizontalNavActive(secId);
+            
+            const el = document.getElementById(secId);
+            if (el) {
+                // scroll-mt 已经在 css 中设置了，直接 scrollIntoView
+                el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                isUserScrolling = false;
+            }, 800); // 滚动动画结束后解锁
+        }
+
+        function handleScroll() {
+            if (isUserScrolling) return;
+
+            const sections = document.querySelectorAll('.section-block');
+            let currentActiveId = null;
+
+            // 寻找当前滚动位置对应的 section
+            sections.forEach(sec => {
+                const rect = sec.getBoundingClientRect();
+                // 如果板块顶部已经到达屏幕上半部分，或者板块占据了屏幕大部分
+                if (rect.top <= 150 && rect.bottom >= 150) {
+                    currentActiveId = sec.id;
+                }
+            });
+
+            if (currentActiveId) {
+                updateHorizontalNavActive(currentActiveId);
+            }
+        }
+
+        function updateHorizontalNavActive(secId) {
+            document.querySelectorAll('.nav-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            const activeTab = document.getElementById(`tab-${secId}`);
+            if (activeTab) {
+                activeTab.classList.add('active');
+                // 保证横向导航能够滚动到可视区域
+                activeTab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+            }
+        }
+
+        // 启动
+        window.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>

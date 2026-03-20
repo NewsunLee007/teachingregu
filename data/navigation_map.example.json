@@ -1,0 +1,38 @@
+{
+  "routeFormat": "#/{subject}/{sectionId}",
+  "defaultSubject": "chinese",
+  "subjects": {
+    "science": {
+      "title": "科学",
+      "home": "science-<auto>",
+      "tabs": [
+        { "id": "science-<auto>", "title": "备课常规" },
+        { "id": "science-<auto>", "title": "上课常规" },
+        { "id": "science-<auto>", "title": "作业常规" },
+        { "id": "science-<auto>", "title": "评价常规" },
+        { "id": "science-<auto>", "title": "学科校本教研" },
+        { "id": "science-<auto>", "title": "学科学习力培养" },
+        { "id": "science-<auto>", "title": "附件" }
+      ]
+    },
+    "chinese": {
+      "title": "语文",
+      "home": "chinese-<auto>",
+      "tabs": [
+        { "id": "chinese-<auto>", "title": "备课常规" },
+        { "id": "chinese-<auto>", "title": "上课常规" },
+        { "id": "chinese-<auto>", "title": "作业常规" },
+        { "id": "chinese-<auto>", "title": "评价常规" },
+        { "id": "chinese-<auto>", "title": "学科校本教研" },
+        { "id": "chinese-<auto>", "title": "学科学习力培养" },
+        { "id": "chinese-<auto>", "title": "附件" }
+      ]
+    }
+  },
+  "guardRules": [
+    "subject 必须属于 subjects 键集合，否则重定向到 defaultSubject",
+    "sectionId 必须存在于对应 subject.tabs[*].id 集合，否则重定向到 subject.home",
+    "禁止跨学科：sectionId 前缀必须与 subject 一致（如 science-... 只能在 science 下使用）"
+  ]
+}
+

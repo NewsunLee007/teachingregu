@@ -1,0 +1,459 @@
+{
+  "routeFormat": "#/{subject}/{sectionId}",
+  "defaultSubject": "chinese",
+  "subjects": {
+    "chinese": {
+      "title": "语文",
+      "home": "chinese-74f1e254",
+      "tabs": [
+        {
+          "id": "chinese-74f1e254",
+          "title": "备课常规"
+        },
+        {
+          "id": "chinese-d7016ed",
+          "title": "上课常规"
+        },
+        {
+          "id": "chinese-e7811748",
+          "title": "作业常规"
+        },
+        {
+          "id": "chinese-4472631",
+          "title": "评价常规"
+        },
+        {
+          "id": "chinese-fea9225b",
+          "title": "学科校本教研"
+        },
+        {
+          "id": "chinese-74bc9364",
+          "title": "学科学习力培养"
+        }
+      ]
+    },
+    "math": {
+      "title": "数学",
+      "home": "math-d01de8c0",
+      "tabs": [
+        {
+          "id": "math-d01de8c0",
+          "title": "备课常规"
+        },
+        {
+          "id": "math-edccf0",
+          "title": "上课常规"
+        },
+        {
+          "id": "math-ce5e5146",
+          "title": "作业常规"
+        },
+        {
+          "id": "math-f9b18ba4",
+          "title": "评价常规"
+        }
+      ]
+    },
+    "english": {
+      "title": "英语",
+      "home": "english-9961ddcc",
+      "tabs": [
+        {
+          "id": "english-9961ddcc",
+          "title": "备课常规"
+        },
+        {
+          "id": "english-9660be0c",
+          "title": "上课常规"
+        },
+        {
+          "id": "english-207c423c",
+          "title": "作业常规"
+        },
+        {
+          "id": "english-4b5c6743",
+          "title": "评价常规"
+        }
+      ]
+    },
+    "science": {
+      "title": "科学",
+      "home": "science-a3334ab8",
+      "tabs": [
+        {
+          "id": "science-a3334ab8",
+          "title": "备课常规"
+        },
+        {
+          "id": "science-3bbbb100",
+          "title": "上课常规"
+        },
+        {
+          "id": "science-692488b9",
+          "title": "作业常规"
+        },
+        {
+          "id": "science-5cf8a478",
+          "title": "评价常规"
+        }
+      ]
+    },
+    "social_law": {
+      "title": "社会·法治",
+      "home": "social_law-c3541f30",
+      "tabs": [
+        {
+          "id": "social_law-c3541f30",
+          "title": "备课常规"
+        },
+        {
+          "id": "social_law-2354ac68",
+          "title": "上课常规"
+        },
+        {
+          "id": "social_law-7641c3d8",
+          "title": "作业常规"
+        },
+        {
+          "id": "social_law-65fa0e9f",
+          "title": "评价常规"
+        },
+        {
+          "id": "social_law-aa5a96e0",
+          "title": "备课常规"
+        },
+        {
+          "id": "social_law-e4ea20c8",
+          "title": "上课常规"
+        },
+        {
+          "id": "social_law-c214b2f8",
+          "title": "评价常规"
+        },
+        {
+          "id": "social_law-6ea04420",
+          "title": "备课常规"
+        },
+        {
+          "id": "social_law-c8428d0",
+          "title": "上课常规"
+        },
+        {
+          "id": "social_law-55148088",
+          "title": "作业常规"
+        },
+        {
+          "id": "social_law-58f7e708",
+          "title": "评价常规"
+        },
+        {
+          "id": "social_law-98c7c958",
+          "title": "备课常规"
+        },
+        {
+          "id": "social_law-dd4c4360",
+          "title": "上课常规"
+        },
+        {
+          "id": "social_law-2675fe00",
+          "title": "评价常规"
+        },
+        {
+          "id": "social_law-dffdc5f0",
+          "title": "备课常规"
+        },
+        {
+          "id": "social_law-ef0461a0",
+          "title": "上课常规"
+        },
+        {
+          "id": "social_law-5749b8ac",
+          "title": "评价常规"
+        },
+        {
+          "id": "social_law-3bf033ac",
+          "title": "备课常规"
+        },
+        {
+          "id": "social_law-29310107",
+          "title": "上课常规"
+        },
+        {
+          "id": "social_law-4d8ba970",
+          "title": "作业常规"
+        },
+        {
+          "id": "social_law-43f5434",
+          "title": "评价常规"
+        },
+        {
+          "id": "social_law-134aadfc",
+          "title": "备课常规"
+        },
+        {
+          "id": "social_law-b5d204be",
+          "title": "上课常规"
+        },
+        {
+          "id": "social_law-7c71dfe8",
+          "title": "作业常规"
+        },
+        {
+          "id": "social_law-512184ac",
+          "title": "评价常规"
+        },
+        {
+          "id": "social_law-db216b70",
+          "title": "备课常规"
+        },
+        {
+          "id": "social_law-6b90a0f8",
+          "title": "上课常规"
+        },
+        {
+          "id": "social_law-2b482852",
+          "title": "评价常规"
+        },
+        {
+          "id": "social_law-3311107a",
+          "title": "备课常规"
+        },
+        {
+          "id": "social_law-3094b71b",
+          "title": "上课常规"
+        },
+        {
+          "id": "social_law-29c4dafb",
+          "title": "评价常规"
+        }
+      ]
+    },
+    "pe_health": {
+      "title": "体育与健康",
+      "home": null,
+      "tabs": []
+    },
+    "music": {
+      "title": "音乐",
+      "home": null,
+      "tabs": []
+    },
+    "art": {
+      "title": "美术",
+      "home": null,
+      "tabs": []
+    },
+    "it": {
+      "title": "信息技术",
+      "home": null,
+      "tabs": []
+    },
+    "labor_practice": {
+      "title": "劳动与综合实践",
+      "home": null,
+      "tabs": []
+    },
+    "full": {
+      "title": "全文（校对用）",
+      "home": "full-7244321c",
+      "tabs": [
+        {
+          "id": "full-7244321c",
+          "title": "备课常规"
+        },
+        {
+          "id": "full-272f18a3",
+          "title": "上课常规"
+        },
+        {
+          "id": "full-3ba287d4",
+          "title": "作业常规"
+        },
+        {
+          "id": "full-381c2f8c",
+          "title": "评价常规"
+        },
+        {
+          "id": "full-df609a1",
+          "title": "学科校本教研"
+        },
+        {
+          "id": "full-79faa36a",
+          "title": "学科学习力培养"
+        },
+        {
+          "id": "full-b9e3f41a",
+          "title": "备课常规"
+        },
+        {
+          "id": "full-c9514a96",
+          "title": "上课常规"
+        },
+        {
+          "id": "full-fe1eac10",
+          "title": "作业常规"
+        },
+        {
+          "id": "full-756c2fec",
+          "title": "评价常规"
+        },
+        {
+          "id": "full-9a8af23e",
+          "title": "备课常规"
+        },
+        {
+          "id": "full-9e4883f0",
+          "title": "上课常规"
+        },
+        {
+          "id": "full-ea2ad4e8",
+          "title": "作业常规"
+        },
+        {
+          "id": "full-168aeaf8",
+          "title": "评价常规"
+        },
+        {
+          "id": "full-2ba64da9",
+          "title": "备课常规"
+        },
+        {
+          "id": "full-53975c1c",
+          "title": "上课常规"
+        },
+        {
+          "id": "full-8759caf0",
+          "title": "作业常规"
+        },
+        {
+          "id": "full-325d7bd0",
+          "title": "评价常规"
+        },
+        {
+          "id": "full-1d141409",
+          "title": "备课常规"
+        },
+        {
+          "id": "full-8f21566a",
+          "title": "上课常规"
+        },
+        {
+          "id": "full-c4cb9394",
+          "title": "作业常规"
+        },
+        {
+          "id": "full-1ab92ebc",
+          "title": "评价常规"
+        },
+        {
+          "id": "full-6c71562c",
+          "title": "备课常规"
+        },
+        {
+          "id": "full-8dc4f2b3",
+          "title": "上课常规"
+        },
+        {
+          "id": "full-2c69b4e0",
+          "title": "评价常规"
+        },
+        {
+          "id": "full-b234e000",
+          "title": "备课常规"
+        },
+        {
+          "id": "full-4f2f3c5c",
+          "title": "上课常规"
+        },
+        {
+          "id": "full-b1f47c90",
+          "title": "作业常规"
+        },
+        {
+          "id": "full-53a9be16",
+          "title": "评价常规"
+        },
+        {
+          "id": "full-bcf7f210",
+          "title": "备课常规"
+        },
+        {
+          "id": "full-e10fa505",
+          "title": "上课常规"
+        },
+        {
+          "id": "full-81acd78",
+          "title": "评价常规"
+        },
+        {
+          "id": "full-4e47902c",
+          "title": "备课常规"
+        },
+        {
+          "id": "full-488fd2e0",
+          "title": "上课常规"
+        },
+        {
+          "id": "full-7f318ce8",
+          "title": "评价常规"
+        },
+        {
+          "id": "full-501bab2b",
+          "title": "备课常规"
+        },
+        {
+          "id": "full-ef740fc4",
+          "title": "上课常规"
+        },
+        {
+          "id": "full-9d698be0",
+          "title": "作业常规"
+        },
+        {
+          "id": "full-81fce890",
+          "title": "评价常规"
+        },
+        {
+          "id": "full-99270f14",
+          "title": "备课常规"
+        },
+        {
+          "id": "full-a74cf2a0",
+          "title": "上课常规"
+        },
+        {
+          "id": "full-5816e6d4",
+          "title": "作业常规"
+        },
+        {
+          "id": "full-df1a2690",
+          "title": "评价常规"
+        },
+        {
+          "id": "full-77fe6235",
+          "title": "备课常规"
+        },
+        {
+          "id": "full-d2d0bdc",
+          "title": "上课常规"
+        },
+        {
+          "id": "full-96bab0d8",
+          "title": "评价常规"
+        },
+        {
+          "id": "full-f584d727",
+          "title": "备课常规"
+        },
+        {
+          "id": "full-4419e4e0",
+          "title": "上课常规"
+        },
+        {
+          "id": "full-986ed003",
+          "title": "评价常规"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0" stop-color="#2E8B57"/>
+      <stop offset="1" stop-color="#1f6f45"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="none"/>
+  <g id="horse" fill="none" stroke="url(#g)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round">
+    <path id="stroke1" d="M170 370 C210 300, 270 250, 340 250 C390 250, 430 270, 470 305 C505 335, 540 350, 595 350 C635 350, 670 335, 700 310"/>
+    <path id="stroke2" d="M700 310 C670 310, 645 320, 615 340 C585 360, 550 380, 515 385 C470 392, 430 375, 390 345 C350 315, 320 305, 290 315 C260 325, 245 350, 250 385"/>
+    <path id="stroke3" d="M250 385 C260 445, 300 480, 350 485 C410 492, 470 455, 495 395"/>
+    <path id="stroke4" d="M320 310 C300 280, 280 255, 265 230"/>
+    <path id="stroke5" d="M360 295 C350 260, 350 225, 365 195 C390 145, 455 125, 505 145 C545 160, 565 190, 575 215"/>
+  </g>
+  <g id="confetti" fill="none" stroke-width="6" stroke-linecap="round">
+    <path d="M120 120 l40 30" stroke="#E9C46A"/>
+    <path d="M680 120 l-45 25" stroke="#F4A261"/>
+    <path d="M140 520 l50 -20" stroke="#E76F51"/>
+    <path d="M660 520 l-55 -18" stroke="#2A9D8F"/>
+  </g>
+</svg>
