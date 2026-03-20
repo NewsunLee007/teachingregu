@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>温州市初中教学常规（2025）</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link id="dark-theme" rel="stylesheet" href="dark.css" media="(prefers-color-scheme: dark)" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar" aria-label="主导航">
+      <div class="brand">
+        <h1>温州初中<br />教学常规</h1>
+        <p>2025</p>
+      </div>
+      <nav class="directory" id="subjectNav" aria-label="学科导航"></nav>
+    </aside>
+    <section class="main">
+      <header class="topbar" role="banner">
+        <div class="crumb" id="currentTitle">语文</div>
+        <div class="top-actions">
+          <button class="btn" id="themeToggle" type="button" aria-label="切换夜间模式">夜间</button>
+        </div>
+      </header>
+
+      <div class="subnavBar" role="navigation" aria-label="子目录">
+        <div class="subnavTabs" id="subnavTabs"></div>
+        <div class="subnavMore">
+          <button class="btn" id="subnavMoreBtn" type="button" aria-haspopup="menu" aria-expanded="false" aria-label="更多子目录">更多</button>
+          <div class="subnavMenu" id="subnavMenu" role="menu" hidden></div>
+        </div>
+      </div>
+
+      <div class="contentWrap">
+        <main class="reader" id="scrollContainer" tabindex="0" aria-label="正文阅读区">
+          <div class="page">
+            <div class="hero">
+              <p>WENZHOU TEACHING REGULATION</p>
+              <h1 id="heroTitle">语文</h1>
+            </div>
+            <div id="subjectPanels"></div>
+          </div>
+        </main>
+      </div>
+    </section>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+  <script src="script.js"></script>
+</body>
+</html>
